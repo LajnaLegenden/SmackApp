@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Send a smack</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <div class="col-md-4">
+        <div class="well">
+            <h3>Output</h3>
+            <p class="list-group" id="output"></p>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <form id="info">
+            <div class="form-group">
+                <label>Enter your name</label>
+                <textarea class="form-control" id="from"></textarea>
+                <label>Enter the one you would like to slap</label>
+                <textarea class="form-control" id="to"></textarea>
+                <br />
+                <input type="submit" value="Generate slap" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</body>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+    var $form = $('#info');
+    var $from = $('#from');
+    var $to = $('#to');
+    var $output = $('#output');
+
+    $form.submit(function (e) {
+        e.preventDefault();
+$output.html('http://smackapp.openode.io/getsmacked?from='+$from.val()+'&to='+$to.val());
+    });
+</script>
+
+</html>
